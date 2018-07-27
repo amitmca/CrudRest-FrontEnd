@@ -1,14 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { ListuserComponent } from './component/listuser/listuser.component';
+import { UserFormComponent } from './component/user-form/user-form.component';
+
+const appRoutes: Routes = [
+  {path: '', component: ListuserComponent},
+  {path: 'op', component: UserFormComponent}
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListuserComponent,
+    UserFormComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
